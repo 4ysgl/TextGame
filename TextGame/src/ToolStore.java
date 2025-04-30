@@ -18,6 +18,7 @@ public class ToolStore extends NormalLoc{
         switch (selTool) {
             case 1:
                 Weapon.weaponMenu(this.player);
+
                 break;
             case 2:
                 System.out.println("zırhlar ");

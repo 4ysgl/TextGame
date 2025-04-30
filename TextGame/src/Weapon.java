@@ -19,7 +19,7 @@ Scanner inp=new Scanner(System.in);
         return wDamage;
     }
 
-    public static void weaponMenu(Player player) {
+    public static void   weaponMenu(Player player) {
         Weapon[] weaponList = { new Tabanca(), new Knife() };
         Scanner inp = new Scanner(System.in);
 
@@ -30,11 +30,11 @@ Scanner inp=new Scanner(System.in);
                             "\t Hasar:\t" + weapon.getwDamage() +
                             "\t Para:\t" + weapon.getwMoney()
             );
+
         }
 
         System.out.print("Silah Seçiniz: ");
         int selID = inp.nextInt();
-
         Weapon selectedWeapon;
         switch (selID) {
             case 1:
@@ -47,13 +47,15 @@ Scanner inp=new Scanner(System.in);
                 System.out.println("Geçersiz seçim, varsayılan olarak Tabanca verildi.");
                 selectedWeapon = new Tabanca();
                 break;
+
         }
+
 
         if (player.getMoney() >= selectedWeapon.getwMoney()) {
             player.setWeapon(selectedWeapon);
             player.setMoney(player.getMoney() - selectedWeapon.getwMoney());
             System.out.println(selectedWeapon.getwName() + " satın alındı!");
-            System.out.println("KALAN: ");
+            System.out.println("KALAN: "+player.getMoney());
         } else {
             System.out.println("Yeterli paranız yok!");
         }
@@ -96,5 +98,17 @@ Scanner inp=new Scanner(System.in);
         }
 
 
+        if (price > 0) {
+            if (player.getMoney() > price) {
+                player.getInv().setDamage(damage);
+                player.getInv().setwName(wName);
+                player.setMoney(player.getMoney() - price);
+                System.out.println(wName + " satýn aldýnýz, Önceki Hasar :" + player.getDamage() + ", Yeni Hasar : "
+                        + player.getTotalDamage());
+                System.out.println("Kalan Para :" + player.getMoney());
+            } else {
+                System.out.println("Para yetersiz. !");
+            }
+        }
     }
 }

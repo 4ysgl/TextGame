@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Player {
-Weapon weapon ;
+    Weapon weapon;
 
     public Location getLocation() {
         return location;
@@ -11,7 +11,7 @@ Weapon weapon ;
         this.location = location;
     }
 
-    Location location ;
+    Location location;
     Inventory inv = new Inventory();
     // Kalııtım
     private int id;
@@ -28,8 +28,6 @@ Weapon weapon ;
     }
 
 
-
-
     // karakter secmek için bir metod oluşturuldu
     void selectChar() {
         GameChar[] charList = {new Samurai(), new Archer(), new Knight()};
@@ -37,7 +35,7 @@ Weapon weapon ;
         for (GameChar gameChar : charList) {
 
             System.out.println(
-                            "İD: \t" + gameChar.getId() +
+                    "İD: \t" + gameChar.getId() +
                             "\t Karakter: \t" + gameChar.getName() +
                             " \t Hasar \t : " + gameChar.getDamage() +
                             " \t Sağlık \t : " + gameChar.getHealth() +
@@ -61,16 +59,15 @@ Weapon weapon ;
             default:
                 initPlayer(new Samurai());
         }
-        System.out.println("İD: "+getId()+
+        System.out.println("İD: " + getId() +
                 "\t KARAKTER:\t" + getName() +
-                " \tHASAR: \t" + getDamage()+
+                " \tHASAR: \t" + getDamage() +
                 "\tSAĞLIK : \t" + getHealth() +
                 "\tPARA :\t" + getMoney());
 
     }
 
-    private void initPlayer(GameChar gameChar)
-    {
+    private void initPlayer(GameChar gameChar) {
         this.id = gameChar.getId();
         this.setDamage(gameChar.getDamage());
         this.setHealthy(gameChar.getHealth());
@@ -138,18 +135,15 @@ Weapon weapon ;
     public void setGamerName(String gamerName) {
         this.gamerName = gamerName;
     }
+    public int getTotalDamage() {
+        return this.getDamage() + this.getInv().getDamage();
+    }
+
+    public void setWeapon(Weapon selectedWeapon) {
+    }
+
 
 ///  weapon
-
-    public Weapon getWeapon() {
-        return weapon;
-    }
-
-    public void setWeapon(Weapon weapon) {
-        this.weapon = weapon;
-    }
-
-
 
 }
 

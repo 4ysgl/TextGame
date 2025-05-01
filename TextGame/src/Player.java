@@ -142,6 +142,9 @@ public class Player {
     public void setWeapon(Weapon selectedWeapon) {
     }
 
+    public void setArmor(Armor selectedArmor) {
+    }
+
 
 ///  weapon
 

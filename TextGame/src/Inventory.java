@@ -1,15 +1,25 @@
-public class Inventory {
 
+public class Inventory {
     private boolean water,food,firewood;
     private String wName,aName;
-    private int damage,armor;
+    private int damage;
+private Armor armor;
+    private Weapon weapon;
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
 
     Inventory(){
         this.water = false;
         this.food = false;
         this.firewood = false;
         this.damage = 0;
-        this.armor = 0;
+        this.armor = null;
         this.wName = null;
         this.aName = null;
     }
@@ -62,11 +72,13 @@ public class Inventory {
         this.damage = damage;
     }
 
-    public int getArmor() {
+    public Armor getArmor() {
         return armor;
     }
 
-    public void setArmor(int armor) {
+    public void setArmor(Armor armor) {
         this.armor = armor;
     }
+
+
 }

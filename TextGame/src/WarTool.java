@@ -1,36 +1,36 @@
 public class WarTool
-{  private  int wId;
-    private int wMoney;
-    private String wName;
+{  private  int Id;
+    private int Money;
+    private String Name;
 
 
     public WarTool(int wId, int wMoney, String wName) {
-        this.wId = wId;
-        this.wMoney = wMoney;
-        this.wName = wName;
+        this.Id = wId;
+        this.Money = wMoney;
+        this.Name = wName;
     }
 
-    public int getwId() {
-        return wId;
+    public int getId() {
+        return Id;
     }
 
-    public void setwId(int wId) {
-        this.wId = wId;
+    public void setId(int id) {
+        Id = id;
     }
 
-    public int getwMoney() {
-        return wMoney;
+    public int getMoney() {
+        return Money;
     }
 
-    public void setwMoney(int wMoney) {
-        this.wMoney = wMoney;
+    public void setMoney(int money) {
+        Money = money;
     }
 
-    public String getwName() {
-        return wName;
+    public String getName() {
+        return Name;
     }
 
-    public void setwName(String wName) {
-        this.wName = wName;
+    public void setName(String name) {
+        Name = name;
     }
 }

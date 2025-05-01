@@ -6,6 +6,6 @@ public class Main {
 
 
    game.Login();
-game.Start();
+   game.Start();
  }
 }

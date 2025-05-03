@@ -5,7 +5,7 @@ public abstract class Location {
     protected String name;
     Scanner scan = new Scanner(System.in);
 
-    Location(Player player, String name) {
+    Location(Player player) {
         this.player = player;
         this.name=name;
     }
